@@ -7,17 +7,17 @@ try:
 	
 except ValueError:
 	print('podaj inta a nie stringa')
-J = year // 100
+century = year // 100
 days_of_the_week = ['Sobota', 'Niedziela', 'Poniedzialek', 'Wtorek', 'Sroda', 'Czwartek', 'Piatek']
 
 # wzor dla kalendarza gregorianskiego 
 def GregorianCalendar(d, month, year):
 	global day_of_the_week
-	day_of_the_week = (d +((13 * (month+1))// 5) + year + (year // 4) + (J // 4) + 5 * J) % 7
+	day_of_the_week = (d +((13 * (month+1))// 5) + year + (year // 4) + (century // 4) + 5 * century) % 7
 	return day_of_the_week
 # wzor dla kalendarza julianskiego
 def JulianCalendar(d, month, year):
-	day_of_the_week_2 = (d +((13 * (month+1))// 5) + year + (year // 4) + 5 + 6 * J) % 7
+	day_of_the_week_2 = (d +((13 * (month+1))// 5) + year + (year // 4) + 5 + 6 * century) % 7
 	return day_of_the_week_2
 
 if year > 1582:
